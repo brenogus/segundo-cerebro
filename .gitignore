@@ -44,8 +44,6 @@ Thumbs.db
 # Generated bundle output
 android/app/build/generated/
 
-# Project docs generated locally
-PROJECT_FILES_OVERVIEW.md
 
 # Fastlane
 **/fastlane/report.xml
