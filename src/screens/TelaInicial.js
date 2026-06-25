@@ -8,6 +8,7 @@ import {
   Alert,
   StatusBar,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
 
 import CartaoCerebro from '../components/CartaoCerebro';
@@ -102,7 +103,7 @@ export default function TelaInicial({ navigation }) {
   }
 
   return (
-    <View style={styles.tela}>
+    <SafeAreaView style={styles.tela} edges={['top', 'bottom']}>
       <StatusBar barStyle="light-content" backgroundColor={colors.bg} />
 
       <View style={styles.cabecalho}>
@@ -148,7 +149,7 @@ export default function TelaInicial({ navigation }) {
         aoConfirmar={cerebroEditando ? handleEditar : handleCriar}
         dadosIniciais={cerebroEditando}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 

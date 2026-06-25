@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import TelaInicial from './src/screens/TelaInicial';
 import TelaCerebro from './src/screens/TelaCerebro';
@@ -39,11 +40,12 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Pilha.Navigator initialRouteName="Inicio" screenOptions={estiloHeader}>
-        <Pilha.Screen
-          name="Inicio"
-          component={TelaInicial}
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Pilha.Navigator initialRouteName="Inicio" screenOptions={estiloHeader}>
+          <Pilha.Screen
+            name="Inicio"
+            component={TelaInicial}
           options={{ headerShown: false }}
         />
         <Pilha.Screen
@@ -64,5 +66,6 @@ export default function App() {
         />
       </Pilha.Navigator>
     </NavigationContainer>
+  </SafeAreaProvider>
   );
 }

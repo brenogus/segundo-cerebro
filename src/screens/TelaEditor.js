@@ -10,6 +10,7 @@ import {
   Platform,
   ScrollView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import PreviewMarkdown from '../components/PreviewMarkdown';
 import { getNota, salvarNota, getListaNotas, gerarId } from '../utils/armazenamento';
@@ -156,11 +157,12 @@ export default function TelaEditor({ route, navigation }) {
   const linkQuebrado = wikiLinks.filter(l => !titulosExistentes.includes(l));
 
   return (
-    <KeyboardAvoidingView
-      style={styles.tela}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
-    >
+    <SafeAreaView style={styles.tela} edges={['top', 'bottom']}>
+      <KeyboardAvoidingView
+        style={styles.tela}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
+      >
       {/* título sempre visível */}
       <TextInput
         style={styles.inputTitulo}
@@ -230,7 +232,8 @@ export default function TelaEditor({ route, navigation }) {
           ))}
         </View>
       )}
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }
 

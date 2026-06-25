@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
 
 import ItemNota from '../components/ItemNota';
@@ -77,7 +78,7 @@ export default function TelaCerebro({ route, navigation }) {
   }
 
   return (
-    <View style={styles.tela}>
+    <SafeAreaView style={styles.tela} edges={['top', 'bottom']}>
       <View style={styles.linhaBusca}>
         <TextInput
           style={styles.inputBusca}
@@ -119,7 +120,7 @@ export default function TelaCerebro({ route, navigation }) {
       >
         <Text style={styles.botaoFlutuanteTexto}>+</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 

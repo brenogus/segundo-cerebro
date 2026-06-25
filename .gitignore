@@ -1,0 +1,54 @@
+# Node modules
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+android/app/build/
+android/.gradle/
+android/*.iml
+android/local.properties
+android/captures/
+
+# Expo and React Native assets
+.expo/\n*.expo
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sln.*
+
+# Misc
+*.log
+*.tmp
+*.temp
+
+# Generated bundle output
+android/app/build/generated/
+
+# Project docs generated locally
+PROJECT_FILES_OVERVIEW.md
+
+# Fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
